@@ -1,13 +1,13 @@
 <nav>
     <ul>
         {% for link in site.navigation %}
-            {% if link.url | slice: 0, 3 == 'http' %}
+            {% assign slice = link.url | slice: 0, 4 %}
+            {% if slice == 'http' %}
                 {% assign link_url = link.url %}
             {% else %}
-                {% assign link_url = link.url | prepend: site.baseurl %}
+                {% assign link_url = link.url | relative_url %}
             {% endif %}
             <li><a href="{{ link_url }}">{{ link.title }}</a></li>
         {% endfor %}
     </ul>
-    {{ site.baseurl }}
 </nav>
