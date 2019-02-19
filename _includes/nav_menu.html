@@ -4,7 +4,7 @@
             {% if link.url | slice: 0, 3 == 'http' %}
                 {% assign link_url = link.url %}
             {% else %}
-                {% assign link_url = link.url | relative_url %}
+                {% assign link_url = link.url | absolute_url %}
             {% endif %}
             <li><a href="{{ link_url }}">{{ link.title }}</a></li>
         {% endfor %}
