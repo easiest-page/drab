@@ -1,0 +1,19 @@
+title: This Is The Website Title
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+navigation:
+  - url: /
+    title: Home
+  - url: /contact.html
+    title: Contact
+disqus_shortname:
+google_analytics:
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "default"
+      comments: true

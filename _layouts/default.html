@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    {% seo %}
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="{{ "/feed.xml" | absolute_url }}">
+</head>
+<body class="type-{% if page.collection %}{{ page.collection }}{% else %}page{% endif %} {{ page.path | slugify}}">
+    <h1>{{ site.title }}</h1>
+    {% include nav_menu.html %}
+    {% include search.html %}
+    {% if content %}
+        <article>
+            <h2>{{ page.title }}</h2>
+            {% if page.date %}
+                <span class="post-date">{{ page.date | date: '%B %d, %Y' }}</span>
+            {% endif %}
+            {{ content }}
+            {% include disqus.html %}
+        </article>
+    {% endif %}
+
+    {% include post_list.html %}
+
+    {% include google_analytics.html %}
+
+    <script src="{{ "/assets/js/script.js?v=" | append: site.github.build_revision | relative_url }}"></script>
+</body>
+</html>

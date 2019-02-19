@@ -1,0 +1,15 @@
+{% if page.url == "/" %}
+    {%- if site.posts.size > 0 -%}
+        {%- for post in site.posts -%}
+            <article>
+                <h2>
+                    <a class="post-link" href="{{ post.url | relative_url }}">
+                        {{ post.title | escape }}
+                    </a>
+                </h2>
+                <span class="post-date">{{ post.date | date: '%B %d, %Y' }}</span>
+                <p>{{ post.excerpt | strip_html }}</p>
+            </article>
+        {%- endfor -%}
+    {%- endif -%}
+{% endif %}
