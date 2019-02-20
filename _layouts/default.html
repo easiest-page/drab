@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    {% assign timestamp = site.time | date: '%s' %}<link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: timestamp | relative_url }}">
     {% seo %}
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="{{ "/feed.xml" | absolute_url }}">
 </head>
@@ -27,6 +27,6 @@
 
     {% include google_analytics.html %}
 
-    <script src="{{ "/assets/js/script.js?v=" | append: site.github.build_revision | relative_url }}"></script>
+    <script src="{{ "/assets/js/script.js?v=" | append: timestamp | relative_url }}"></script>
 </body>
 </html>
